@@ -1,0 +1,69 @@
+body {
+    background-image: url(sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  h1 {
+    font-family: "gimlet-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 40px;
+    color: rgb(78, 71, 58);
+  }
+  .gpa{
+    width:20%;
+    border-radius: 40px;
+  }
+  .gpa:hover{
+  opacity:0.6;
+  }
+  p {
+    font-family: "gimlet-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+  }
+  #result {
+    font-family: "gimlet-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: rgb(6, 75, 250);
+    text-align: center;
+  }
+  div.btn {
+    background-image: linear-gradient(
+      180deg,
+      rgb(46, 120, 204),
+      rgb(152, 182, 236)
+    );
+    box-shadow: 2px 3px rgb(6, 75, 250);
+    font-family: "gimlet-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: black;
+  }
+  div.btn:hover{
+    background-image:linear-gradient(180deg, white, orange);
+    box-shadow: 2px 3px rgb(87, 56, 0);
+  }
+  .plane {
+    width: 18%;
+  }
+  .form-control {
+    font-family: "baldufa-greek", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(241, 221, 183);
+    border: 2px solid black;
+  }
+  .form-label{
+    font-family: "gimlet-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+  }
+  
+  
