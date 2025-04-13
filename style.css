@@ -11,21 +11,21 @@ body{
   background-color:#5372F0;
   box-sizing:border-box;
 }
-.container{
+#container{
   width:450px;
   border-radius:7px;
   background:#fff;
 }
-.container h2{
+#container h2{
   font-size:25px;
   font-weight:500;
   padding: 18px 25px;
   border-bottom: 1px solid #ccc;
 }
-.container .content{
+#container #content{
   margin:25px 20px 35px;
 }
-.content .word{
+#content #word{
   font-size: 33px;
   font-weight:500;
   text-align:center;
@@ -33,19 +33,19 @@ body{
   letter-spacing: 24px;
   margin-right: -24px;
 }
-.content .details{
+#content #details{
   margin:25px 0 20px;
 
 }
-.details p{
+#details p{
   font-size:18px;
   margin-bottom: 10px;
 
 }
-.details p b{
+#details p b{
   font-weight:500;
 }
-.content input{
+#content input{
   width: 100%;
   height:60px;
   outline:none;
@@ -53,7 +53,7 @@ body{
   border-radius: 5px;
   border: 1px solid #aaa;
 }
-.content .buttons{
+#content #buttons{
   display:flex;
   margin-top:20px;
   justify-content: center;
@@ -62,7 +62,7 @@ body{
   padding-bottom: 20px;
 
 }
-.buttons button{
+#buttons button{
   border:none;
   outline:none;
   padding: 15px 24;
@@ -73,10 +73,10 @@ body{
   min-width:120px;
 }
 
-.buttons .refresh-word{
+#buttons #refreshWord{
   background: #6c757d;
 }
-.buttons .check-word{
+#buttons #checkWord{
   background: #5372F0;
 
 }
