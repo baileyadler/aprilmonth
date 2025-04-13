@@ -1,69 +1,82 @@
-body {
-    background-image: url(sky.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  h1 {
-    font-family: "gimlet-display", serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: 40px;
-    color: rgb(78, 71, 58);
-  }
-  .gpa{
-    width:20%;
-    border-radius: 40px;
-  }
-  .gpa:hover{
-  opacity:0.6;
-  }
-  p {
-    font-family: "gimlet-display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-  }
-  #result {
-    font-family: "gimlet-display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-    color: rgb(6, 75, 250);
-    text-align: center;
-  }
-  div.btn {
-    background-image: linear-gradient(
-      180deg,
-      rgb(46, 120, 204),
-      rgb(152, 182, 236)
-    );
-    box-shadow: 2px 3px rgb(6, 75, 250);
-    font-family: "gimlet-display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-    color: black;
-  }
-  div.btn:hover{
-    background-image:linear-gradient(180deg, white, orange);
-    box-shadow: 2px 3px rgb(87, 56, 0);
-  }
-  .plane {
-    width: 18%;
-  }
-  .form-control {
-    font-family: "baldufa-greek", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: rgb(241, 221, 183);
-    border: 2px solid black;
-  }
-  .form-label{
-    font-family: "gimlet-display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-  }
-  
-  
+body{
+  font-family: "gelica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  background-color:#5372F0;
+  box-sizing:border-box;
+}
+.container{
+  width:450px;
+  border-radius:7px;
+  background:#fff;
+}
+.container h2{
+  font-size:25px;
+  font-weight:500;
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.container .content{
+  margin:25px 20px 35px;
+}
+.content .word{
+  font-size: 33px;
+  font-weight:500;
+  text-align:center;
+  text-transform: uppercase;
+  letter-spacing: 24px;
+  margin-right: -24px;
+}
+.content .details{
+  margin:25px 0 20px;
+
+}
+.details p{
+  font-size:18px;
+  margin-bottom: 10px;
+
+}
+.details p b{
+  font-weight:500;
+}
+.content input{
+  width: 100%;
+  height:60px;
+  outline:none;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.content .buttons{
+  display:flex;
+  margin-top:20px;
+  justify-content: center;
+  margin-bottom:30px;
+  gap:16px;
+  padding-bottom: 20px;
+
+}
+.buttons button{
+  border:none;
+  outline:none;
+  padding: 15px 24;
+  font-size:17px;
+  color:#fff;
+  cursor:pointer;
+  border-radius: 5px;
+  min-width:120px;
+}
+
+.buttons .refresh-word{
+  background: #6c757d;
+}
+.buttons .check-word{
+  background: #5372F0;
+
+}
