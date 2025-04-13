@@ -35,7 +35,26 @@
                     <input type="text" id="inputField" placeholder="Enter a valid word">
                     <div id="buttons">
 <button id="refreshWord">Refresh Word</button> 
-<button id="checkWord">Check Word</button>                
+<button id="checkWord">Check Word</button> 
+      <!-- Message Display (Hidden initially) -->
+      <div id="messageBox" class="alert d-none mt-3"></div>
+      <!-- Bootstrap Modal -->
+<div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Game Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                Message content goes here.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>               
 </div>
         </div>
             </div>

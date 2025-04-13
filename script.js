@@ -1,22 +1,16 @@
-let correctWord, timer;
-const initTimer = maxTime => {
-  clearInterval(timer)
-  timer = setInterval(() => {
-if(maxTime > 0) {
-  maxTime--;
-  return timeText.innerText = maxTime;
-}
-clearInterval(timer)
-alert(`Time is up! ${correctWord.toUpperCase()} was the correct word`)
-initGame();//let the game restart to a new word
-  }, 1000);
-}
+let correctWord;
+let timer;
 const wordText = document.getElementById('word')//callsthe word id
 const timeText = document.getElementById('time')
 const hintText = document.getElementById('hint')//calls the id for the hint
 const refreshBtn = document.getElementById('refreshWord')
 const inputField = document.getElementById('inputField')
 const checkBtn = document.getElementById('checkWord')
+
+const modalTitle = document.getElementById('modalTitle')
+const modalBody = document.getElementById('modalBody')
+const modal = document.getElementById('gameModal')
+
 //word list to get scrambled with hints
 const words = [
   {
@@ -64,7 +58,7 @@ const words = [
     hint: 'What causes spring allergies'
   },
   {
-    word:'tullip',
+    word:'tulip',
     hint:'A popular spring flower'
   },
   {
@@ -101,6 +95,19 @@ const words = [
   },
 ];
 
+const initTimer = maxTime => {
+  clearInterval(timer);
+  timer = setInterval(() => {
+if(maxTime > 0) {
+  maxTime--;
+  return timeText.innerText = maxTime;
+}
+clearInterval(timer)
+showModal("⏰ Time's Up", `${correctWord.toUpperCase()} was the correct word`);
+initGame();//let the game restart to a new word
+  }, 1000);
+}
+
 const initGame = () => {
   initTimer(40); // gives the max time of 40 seconds
   let randomObj = words[Math.floor(Math.random() * words.length)];
@@ -114,11 +121,10 @@ inputField.setAttribute('maxlength', correctWord.length)
   }
   wordText.innerText = wordArray.join('');
   hintText.innerText = randomObj.hint;
-  console.log(wordArray, randomObj.word);
 }
 initGame();
 const checkWord = () => {
-  let userWord = inputField.value.toLocaleLowerCase();//finds out the user value
+  let userWord = inputField.value.toLowerCase();//finds out the user value
   if(!userWord) return alert(`Please enter a word check`);//alerts user if they did not enter anything
   if(userWord !== correctWord) return alert(`Oops! ${userWord} is not a correct word`) //if user word does not match with correct word
     alert(`Congrats! ${userWord.toUpperCase()} is a correct word`)//shows what happens if the user word is the correct word
@@ -126,3 +132,40 @@ const checkWord = () => {
   }
 refreshBtn.addEventListener('click', initGame);
 checkBtn.addEventListener('click', checkWord);
+    // Allow user to press Enter to guess a letter
+    inputField.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+          checkWord();
+      }});
+
+      // Show Bootstrap Modal for Messages
+function showModal(title, message) {
+  modalTitle.textContent = title;
+  modalBody.textContent = message;
+  modal.show();
+}
+
+// Handle Letter Guess
+function guessLetter() {
+  let guessedLetter = letterInput.value.toLowerCase();
+
+  if (!userWord) {
+      return showModal('⚠️ Invalid Input', 'Please enter a valid word');
+      
+  }
+
+  if (userWord !== correctWord) {
+      return showModal('⚠️ Already Guessed', `You already guessed '${guessedLetter}'. Try a different letter!`);
+    }
+    showModal("✅ Correct!", `Well done! "${userWord.toUpperCase()}" is the correct word!`);
+
+
+}
+// End Game (Win or Lose)
+function endGame(won) {
+    if (won) {
+        showModal('🎉 You Won!', 'Great job! You guessed the word correctly. 🍀');
+    } else {
+        showModal('😞 You Lost', `The correct word was "${selectedWord}". Better luck next time!`);
+    }
+  }

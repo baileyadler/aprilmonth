@@ -15,6 +15,8 @@ body{
   width:450px;
   border-radius:7px;
   background:#fff;
+  border: 10px 10px red;
+
 }
 #container h2{
   font-size:25px;
@@ -79,4 +81,54 @@ body{
 #buttons #checkWord{
   background: #5372F0;
 
+}
+
+
+/*from other project */
+
+.prompt-message{
+        position: fixed;
+        top:10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color:white;
+        border-radius: 5px;
+        font-size:200px;
+        font-weight:bold;
+        z-index: 1000;
+        display:none;
+        transition: opacity 0.5s ease;
+    }
+    .prompt-message.show{
+        display: block;
+        opacity: 1;
+    }
+    #promptMessage{
+        position: fixed;
+        top:20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color:white;
+        border-radius: 5px;
+        font-size:200px;
+        font-weight:bold;
+        z-index: 1000;
+        display:none;
+        opacity: 0;
+animation: popUp 1s fowards;    }
+#popupRestartBtn {
+    margin-top: 15px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#popupRestartBtn:hover {
+    background-color: #218838;
+}
+.d-none {
+  display: none;
 }
