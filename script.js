@@ -9,7 +9,8 @@ const checkBtn = document.getElementById('checkWord')
 
 const modalTitle = document.getElementById('modalTitle')
 const modalBody = document.getElementById('modalBody')
-const modal = document.getElementById('gameModal')
+const modalElement = document.getElementById('gameModal')
+const modal = new bootstrap.Modal(modalElement);
 
 //word list to get scrambled with hints
 const words = [
@@ -95,7 +96,31 @@ const words = [
   },
 ];
 
-const initTimer = maxTime => {
+
+      // Show Bootstrap Modal for Messages
+      function showModal(title, message, restart = false) {
+        modalTitle.textContent = title;
+        modalBody.textContent = message;
+        modal.show();
+      }
+
+
+
+      // End Game (Win or Lose)
+      function endGame(won) {
+          if (won) {
+             
+              showModal('🎉 You Won!', `✅ Correct. Great job! The correct word was '${correctWord.toUpperCase()}'.`,);
+          } else {
+            
+              showModal('😞 You Lost', `❌ Incorect. The correct word was "${correctWord.toUpperCase()}'.`,);
+          }}
+      
+
+
+
+
+function initTimer( maxTime) {
   clearInterval(timer);
   timer = setInterval(() => {
 if(maxTime > 0) {
@@ -123,13 +148,23 @@ inputField.setAttribute('maxlength', correctWord.length)
   hintText.innerText = randomObj.hint;
 }
 initGame();
-const checkWord = () => {
-  let userWord = inputField.value.toLowerCase();//finds out the user value
-  if(!userWord) return alert(`Please enter a word check`);//alerts user if they did not enter anything
-  if(userWord !== correctWord) return alert(`Oops! ${userWord} is not a correct word`) //if user word does not match with correct word
-    alert(`Congrats! ${userWord.toUpperCase()} is a correct word`)//shows what happens if the user word is the correct word
-    initGame();
+function checkWord () {
+  const userWord = inputField.value.toLowerCase();//finds out the user value
+  if (!userWord) {
+       showModal('⚠️ Invalid Input', 'Please enter a valid word');
+       return;
+      
   }
+
+  if (userWord !== correctWord) {
+       showModal('❌ Incorect', ` '${userWord.toLowerCase()}' is not the correct word!`);
+       return
+    }
+clearInterval(timer)
+endGame(true);
+}
+
+
 refreshBtn.addEventListener('click', initGame);
 checkBtn.addEventListener('click', checkWord);
     // Allow user to press Enter to guess a letter
@@ -137,35 +172,4 @@ checkBtn.addEventListener('click', checkWord);
       if (event.key === 'Enter') {
           checkWord();
       }});
-
-      // Show Bootstrap Modal for Messages
-function showModal(title, message) {
-  modalTitle.textContent = title;
-  modalBody.textContent = message;
-  modal.show();
-}
-
-// Handle Letter Guess
-function guessLetter() {
-  let guessedLetter = letterInput.value.toLowerCase();
-
-  if (!userWord) {
-      return showModal('⚠️ Invalid Input', 'Please enter a valid word');
-      
-  }
-
-  if (userWord !== correctWord) {
-      return showModal('⚠️ Already Guessed', `You already guessed '${guessedLetter}'. Try a different letter!`);
-    }
-    showModal("✅ Correct!", `Well done! "${userWord.toUpperCase()}" is the correct word!`);
-
-
-}
-// End Game (Win or Lose)
-function endGame(won) {
-    if (won) {
-        showModal('🎉 You Won!', 'Great job! You guessed the word correctly. 🍀');
-    } else {
-        showModal('😞 You Lost', `The correct word was "${selectedWord}". Better luck next time!`);
-    }
-  }
+initGame()
