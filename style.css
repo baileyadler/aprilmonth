@@ -8,14 +8,16 @@ body{
   align-items:center;
   justify-content:center;
   min-height:100vh;
-  background-color:#5372F0;
+  background-image: url(flower.jpeg);
+  background-size: 100%;
+  background-repeat:no-repeat;
   box-sizing:border-box;
 }
 #container{
   width:450px;
   border-radius:7px;
   background:#fff;
-  border: 10px 10px red;
+  border: 10px 10px solid rgb(29, 19, 19);
 
 }
 #container h2{
