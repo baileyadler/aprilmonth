@@ -9,7 +9,7 @@ body{
   justify-content:center;
   min-height:100vh;
   background-image: url(flower.jpeg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat:no-repeat;
   box-sizing:border-box;
 }
