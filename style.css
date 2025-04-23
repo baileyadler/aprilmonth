@@ -17,32 +17,35 @@ body{
   width:450px;
   border-radius:7px;
   background:#fff;
-  border: 10px 10px solid rgb(29, 19, 19);
+  border-style: solid;
+  border-color: rgb(75, 75, 74);
+  box-shadow: 10px rgb(23, 197, 154);
 
 }
 #container h2{
   font-size:25px;
   font-weight:500;
   padding: 18px 25px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 4px solid  #67bb80;
 }
 #container #content{
   margin:25px 20px 35px;
 }
 #content #word{
-  font-size: 33px;
+  font-size: 35px;
   font-weight:500;
   text-align:center;
   text-transform: uppercase;
   letter-spacing: 24px;
   margin-right: -24px;
+  font-family: "redonda", sans-serif;
+  font-style: normal;
 }
 #content #details{
   margin:25px 0 20px;
-
 }
 #details p{
-  font-size:18px;
+  font-size:22px;
   margin-bottom: 10px;
 
 }
@@ -78,11 +81,14 @@ body{
 }
 
 #buttons #refreshWord{
-  background: #6c757d;
+  background: #e9de47;
+  height:40px;
+  color:black;
 }
 #buttons #checkWord{
-  background: #5372F0;
-
+  background: #67bb80;
+height: 40px;
+color:black;
 }
 
 
