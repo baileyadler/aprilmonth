@@ -1,85 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Word Scramble</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://use.typekit.net/mks6gyf.css">
-        <link rel="stylesheet" href="https://use.typekit.net/rpa3uvd.css">
-        </head>
+<head>
+    <title>Word Scramble</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <body>
-        
-        <main>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mks6gyf.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rpa3uvd.css">
+</head>
 
-            <div id="container">
-                <div class="row">
-                    <div class="col-6">
-                <h2>Word Scramble</h2>
-                <div id="content">
-                    <p id=word>spring</p>
-                    <div id="details">
-                        <p id="hint">Hint:</p>
-                        <p id="time"> Time: <span><b>40</b>s</span></p>
+<body>
+
+    <main>
+
+        <div id="container">
+            <div class="row justify-content-center">
+                <div class="col-6 text-center ">
+                    <h2>Word Scramble</h2>
+                    <div id="content">
+                        <p id="word">spring</p>
+                        <div id="details">
+                            <p id="hint">Hint:</p>
+                            <p id="time"> Time: <span><b>40</b>s</span></p>
+                        </div>
+                        <input type="text" id="inputField" placeholder="Enter a valid word">
+                        <div id="buttons">
+                            <button id="refreshWord">Refresh Word</button>
+                            <button id="checkWord">Check Word</button>
+                            <!-- Message Display (Hidden initially) -->
+                            <div id="messageBox" class="alert d-none mt-3"></div>
+                            <!-- Bootstrap Modal -->
+                            <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="modalTitle"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalTitle">Game Message</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body" id="modalBody">
+                                            Message content goes here.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input type="text" id="inputField" placeholder="Enter a valid word">
-                    <div id="buttons">
-<button id="refreshWord">Refresh Word</button> 
-<button id="checkWord">Check Word</button> 
-      <!-- Message Display (Hidden initially) -->
-      <div id="messageBox" class="alert d-none mt-3"></div>
-      <!-- Bootstrap Modal -->
-<div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Game Message</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                Message content goes here.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>               
-</div>
-        </div>
-            </div>
-        </div>
-    </div>
 
-        </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-        <script src="script.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>
